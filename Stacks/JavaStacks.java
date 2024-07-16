@@ -35,7 +35,7 @@ public class JavaStacks{
 	public static void main(String[] args){
 	Stack<Integer> stack = new Stack<>(); 
 	// THE SHUNTING YARD ALGORITHM developed by Edsger Dijkstra
-	// Step1: empty stack output-list
+	// Step1: create empty stack output-list
 	// Step2: read expression from left to right
 	// Step3: Each token (operand, operator, or parenthesis) in the infix expression:
 
@@ -52,13 +52,13 @@ public class JavaStacks{
 	Pop any remaining operators in the stack to the output list.
 	*/
 	//Step4: Pop any remaining operators to the output list
-	String infixExpression = "A+B*C";
+	String infixExpression = "A*B+C";
     String postfixExpression = infixToPostfix(infixExpression);
     System.out.println("Infix: " + infixExpression);
     System.out.println("Postfix: " + postfixExpression);
 	
 	}
-	private static int precedence(char operator) {
+	private static int precedence(char operator) { // $
         switch (operator) {
             case '+':
             case '-':
